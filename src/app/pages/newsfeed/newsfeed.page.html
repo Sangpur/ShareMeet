@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Aus der Umgebung</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let n of news">
+    <ion-card-header>
+      <ion-card-subtitle>{{n.author.name}}#{{n.author.id}}</ion-card-subtitle>
+      <ion-card-title>{{n.title}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{n.message}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
