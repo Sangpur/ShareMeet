@@ -1,0 +1,7 @@
+{
+  "name": "OsnaConnect",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
