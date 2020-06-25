@@ -1,9 +1,20 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>notifications</ion-title>
+    <ion-title>Benachrichtigung</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <p>Neu</p>
+  <ion-card *ngFor="let n of notificationNew">
+    <ion-card-content>
+        {{n.message}}
+    </ion-card-content>
+  </ion-card>
+  <p>Alt</p>
+  <ion-card *ngFor="let n of notificationOld">
+    <ion-card-content>
+        {{n.message}}
+    </ion-card-content>
+  </ion-card>
 </ion-content>
