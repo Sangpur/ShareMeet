@@ -3,4 +3,10 @@
      leaflet 
      [leafletOptions]="options">
   </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="presentModal()">
+      <ion-icon name="list"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
 </ion-content>

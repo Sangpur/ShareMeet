@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterPage implements OnInit {
 
+
   constructor() { }
 
   ngOnInit() {
   }
-
 }
