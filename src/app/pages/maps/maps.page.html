@@ -1,12 +1,18 @@
 <ion-content>
-  <div style="height: 100%;"
-     leaflet 
-     [leafletOptions]="options">
-  </div>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="presentModal()">
-      <ion-icon name="list"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-  
+    <mgl-map
+            [style]="'mapbox://styles/mapbox/streets-v11'"
+            [zoom]="[14]"
+            [center]="[8.0498, 52.27264]">
+        <mgl-marker *ngFor="let poper of location"
+                    [lngLat]="[poper.longitude, poper.latitude]"
+                    #{{poper.title}}
+        >
+        </mgl-marker>
+        <mgl-popup *ngFor="let poper of location"
+                [closeOnClick]="false"
+                   [lngLat]="[poper.longitude, poper.latitude]">
+          <b class="schwarz">{{poper.title}}</b><div class="schwarz">{{poper.street}}</div><div class="schwarz">{{poper.postcode}}</div>
+        </mgl-popup>
+    </mgl-map>
 </ion-content>
+
