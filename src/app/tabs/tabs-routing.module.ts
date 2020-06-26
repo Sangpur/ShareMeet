@@ -12,6 +12,10 @@ const routes: Routes = [
         loadChildren: () => import('../pages/maps/maps.module').then(m => m.MapsPageModule)
       },
       {
+        path: 'filter',
+        loadChildren: () => import('../pages/maps/filter/filter.module').then(m => m.FilterPageModule)
+      },
+      {
         path: 'news',
         loadChildren: () => import('../pages/newsfeed/newsfeed.module').then(m => m.NewsfeedPageModule)
       },

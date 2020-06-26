@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { latLng, tileLayer } from 'leaflet';
 import { ModalController, IonRouterOutlet } from '@ionic/angular';
-import { FilterPage } from './filter/filter.page';
+import { FilterModalPage } from './filter-modal/filter-modal.page';
 
 @Component({
   selector: 'app-maps',
@@ -26,8 +26,8 @@ export class MapsPage implements OnInit {
   async presentModal() {
     console.log("test");
     const modal = await this.modalController.create({
-      component: FilterPage,
-      cssClass: 'my-custom-class',
+      component: FilterModalPage,
+      cssClass: 'mymodal',
       swipeToClose: true,
       presentingElement: this.routerOutlet.nativeEl,
       animated: true,
