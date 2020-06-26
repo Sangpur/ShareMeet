@@ -147,4 +147,20 @@ events = [
   getAllEvents(){
     return this.events
   }
+
+  createEvent(title, description, tags){
+    this.events.push(
+    {
+      title: title,
+      description: description,
+      promised: false,
+      pending: false,
+      finished: false,
+      own: true,
+      memberCount: 1,
+      memberMaxCount: 0,
+      unansweredCount: 0,
+      tags: tags
+    });
+  }
 }
