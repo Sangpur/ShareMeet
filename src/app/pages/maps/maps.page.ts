@@ -21,7 +21,7 @@ export class MapsPage implements OnInit {
         {
             latitude: 52.277248,
             longitude: 8.039240,
-            title: 'Grüne Ganz',
+            title: 'Grüne Gans',
             street: 'Große Gildewart 15',
             postcode: '49086 Osnabrück',
         },
