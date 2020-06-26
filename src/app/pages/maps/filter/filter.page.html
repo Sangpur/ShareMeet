@@ -1,9 +1,14 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>filter</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+    <div class="mycontent">
+        <h3>Hier können sie ihre Interessen auswählen</h3>
+        <br><br><br>
+        <h3>{{filter.title}}</h3>
+        <ion-chip *ngFor="let tag of filter.tags">
+            <ion-label>{{tag}}</ion-label>
+          </ion-chip>
 
+
+        <ion-button class="mybutton" expand="block" fill="outline" (click)="returnToMap()">Bestätigen</ion-button>
+    </div>
 </ion-content>
+

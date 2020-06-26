@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="handle"></div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="mycontent">
+    <h4>Freizeit Aktivitäten</h4>
+    <div *ngFor="let x of freizeit" class="mydiv">
+      <ion-row>
+        <ion-col size="1">
+          <ion-checkbox class="mycheckbox"></ion-checkbox>
+        </ion-col>
+        <ion-col (click)="routeToFilter(x.title)">
+          <span class="mytitle">{{x.title}}</span>
+        </ion-col>
+        <ion-col (click)="routeToFilter(x.title)">
+          <ion-icon class="myicon" name="chevron-forward"></ion-icon>
+        </ion-col>
+      </ion-row>
+      
+      <div class="mychipdiv">
+        <ion-chip *ngFor="let tag of x.tags">
+          <ion-label>{{tag}}</ion-label>
+        </ion-chip>
+      </div>
+    </div>
+
+    <h4>Engagement</h4>
+    <div *ngFor="let x of engagement" class="mydiv">
+      <ion-row>
+        <ion-col size="1">
+          <ion-checkbox class="mycheckbox"></ion-checkbox>
+        </ion-col>
+        <ion-col (click)="routeToFilter(x.title)">
+          <span class="mytitle">{{x.title}}</span>
+        </ion-col>
+        <ion-col (click)="routeToFilter(x.title)">
+          <ion-icon class="myicon" name="chevron-forward"></ion-icon>
+        </ion-col>
+      </ion-row>
+      
+      <div class="mychipdiv">
+        <ion-chip *ngFor="let tag of x.tags">
+          <ion-label>{{tag}}</ion-label>
+        </ion-chip>
+      </div>
+    </div>
+  </div>
+  <ion-button expand="block" fill="outline" class="mybutton" (click)="resetFilter()">Auf Präferenzen zurücksetzen</ion-button>
+</ion-content>

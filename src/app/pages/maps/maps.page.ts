@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { latLng, tileLayer } from 'leaflet';
+import { ModalController, IonRouterOutlet } from '@ionic/angular';
+import { FilterModalPage } from './filter-modal/filter-modal.page';
 
 @Component({
   selector: 'app-maps',
@@ -16,9 +18,23 @@ export class MapsPage implements OnInit {
     center: latLng(46.879966, -121.726909)
   };
 
-  constructor() { }
+  constructor(private modalController: ModalController, private routerOutlet: IonRouterOutlet) { }
 
   ngOnInit() {
   }
 
+  async presentModal() {
+    console.log("test");
+    const modal = await this.modalController.create({
+      component: FilterModalPage,
+      cssClass: 'mymodal',
+      swipeToClose: true,
+      presentingElement: this.routerOutlet.nativeEl,
+      animated: true,
+      mode: 'ios',
+      backdropDismiss: true,
+
+  });
+  return await modal.present();
+  }
 }
