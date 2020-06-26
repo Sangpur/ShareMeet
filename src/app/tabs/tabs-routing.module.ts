@@ -20,8 +20,16 @@ const routes: Routes = [
         loadChildren: () => import('../pages/newsfeed/newsfeed.module').then(m => m.NewsfeedPageModule)
       },
       {
-        path: 'events',
+        path: 'my-event',
         loadChildren: () => import('../pages/events/my-event/my-event.module').then(m => m.MyEventPageModule)
+      },
+      {
+        path: 'new-event',
+        loadChildren: () => import('../pages/events/new-event/new-event.module').then(m => m.NewEventPageModule)
+      },
+      {
+        path: 'events',
+        loadChildren: () => import('../pages/events/events.module').then(m => m.EventsPageModule)
       },
       {
         path: 'settings',

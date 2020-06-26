@@ -15,7 +15,7 @@
     <p class="header">Zugesagt</p>
     <ion-card *ngFor="let n of promisedEvents">
       <ion-card-header>
-        <ion-card-title>{{n.title}}</ion-card-title>
+        <ion-card-title>{{n.title}} <ion-icon name="share-social"></ion-icon></ion-card-title>
       </ion-card-header>
     
       <ion-card-content>
@@ -29,7 +29,7 @@
     <p class="header">Abgesagt</p>
     <ion-card *ngFor="let n of calledOffEvents">
       <ion-card-header>
-        <ion-card-title>{{n.title}}</ion-card-title>
+        <ion-card-title>{{n.title}} <ion-icon name="share-social"></ion-icon></ion-card-title>
       </ion-card-header>
     
       <ion-card-content>
@@ -43,7 +43,7 @@
   <p class="header">Beendet</p>
   <ion-card *ngFor="let n of finishedEvents">
     <ion-card-header>
-      <ion-card-title>{{n.title}}</ion-card-title>
+      <ion-card-title>{{n.title}} <ion-icon name="share-social"></ion-icon></ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
@@ -59,7 +59,7 @@
   <div *ngIf="pendingStatus">
     <ion-card *ngFor="let n of pending">
       <ion-card-header>
-        <ion-card-title>{{n.title}}</ion-card-title>
+        <ion-card-title>{{n.title}} <ion-icon name="share-social"></ion-icon></ion-card-title>
       </ion-card-header>
     
       <ion-card-content>
@@ -76,7 +76,7 @@
     <p class="header">Aktuell</p>
     <ion-card *ngFor="let n of ownEvents">
       <ion-card-header>
-        <ion-card-title>{{n.title}}</ion-card-title>
+        <ion-card-title>{{n.title}} <ion-icon name="share-social"></ion-icon></ion-card-title>
       </ion-card-header>
     
       <ion-card-content>
@@ -94,7 +94,7 @@
     <p class="header">Beendet</p>
     <ion-card *ngFor="let n of finishedownEvents">
       <ion-card-header>
-        <ion-card-title>{{n.title}}</ion-card-title>
+        <ion-card-title>{{n.title}} <ion-icon name="share-social"></ion-icon></ion-card-title>
       </ion-card-header>
     
       <ion-card-content>
@@ -110,7 +110,7 @@
     </ion-card>
   </div>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
+    <ion-fab-button [routerLink]="['/tabs/new-event']">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

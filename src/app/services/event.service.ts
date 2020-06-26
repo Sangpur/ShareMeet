@@ -30,52 +30,46 @@ events = [
     ]
   },
   {
-    title: "test1",
-    description: "somethinge",
+    title: "Fußball!!!!",
+    description: "Wir suchen Leute für ein paar Runden.",
     promised: false,
     pending: true,
     finished: false,
     own: false,
-    memberCount: 10,
-    memberMaxCount: 20,
-    unansweredCount: 10,
+    memberCount: 18,
+    memberMaxCount: 22,
+    unansweredCount: 5,
     tags: [
       {
-        name: "Tennis",
+        name: "Fußball",
       },
       {
         name: "Sport",
-      },
-      {
-        name: "Tunnier",
       }
     ]
   },
   {
-    title: "test11",
-    description: "somethinge",
+    title: "Tag der offnen Tür der Feuerwehr",
+    description: "Wir laden alle Leute ein heute ein Blick in unser Feuerwehrhaus zu werfen",
     promised: false,
     pending: false,
     finished: false,
     own: false,
-    memberCount: 10,
-    memberMaxCount: 20,
+    memberCount: 30,
+    memberMaxCount: 100,
     unansweredCount: 10,
     tags: [
       {
-        name: "Tennis",
+        name: "Feuerwehr",
       },
       {
-        name: "Sport",
-      },
-      {
-        name: "Tunnier",
+        name: "Ehrenamt",
       }
     ]
   },
   {
-    title: "test2",
-    description: "somethinge",
+    title: "Tennis Tunnier",
+    description: "Wir veranstalten ein Tennis Tunnier und suchen noch Leute",
     promised: false,
     pending: false,
     finished: true,
@@ -96,31 +90,27 @@ events = [
     ]
   },
   {
-    title: "test3",
-    description: "somethinge",
+    title: "Fußball!!!!",
+    description: "Wir suchen Leute für ein paar Runden.",
     promised: false,
     pending: false,
     finished: false,
     own: true,
-    memberCount: 10,
-    memberMaxCount: 20,
-    unansweredCount: 10,
+    memberCount: 18,
+    memberMaxCount: 22,
+    unansweredCount: 5,
     tags: [
       {
-        name: "Tennis",
+        name: "Fußball",
       },
       {
         name: "Sport",
-      },
-      {
-        name: "Tunnier",
       }
-      
     ]
   },
   {
-    title: "test4",
-    description: "somethinge",
+    title: "Tennis Tunnier",
+    description: "Wir veranstalten ein Tennis Tunnier und suchen noch Leute",
     promised: false,
     pending: false,
     finished: true,
@@ -138,7 +128,6 @@ events = [
       {
         name: "Tunnier",
       }
-      
     ]
   }
 ]
@@ -146,5 +135,21 @@ events = [
 
   getAllEvents(){
     return this.events
+  }
+
+  createEvent(title, description, tags){
+    this.events.push(
+    {
+      title: title,
+      description: description,
+      promised: false,
+      pending: false,
+      finished: false,
+      own: true,
+      memberCount: 1,
+      memberMaxCount: 0,
+      unansweredCount: 0,
+      tags: tags
+    });
   }
 }
