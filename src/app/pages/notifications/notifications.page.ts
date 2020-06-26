@@ -19,6 +19,8 @@ export class NotificationsPage implements OnInit {
 
   loadNotifactions(){
     this.notificationNew = this.notificationService.getNotification().filter(x => x.date >= (Date.now() - (1000*60*60*24*2.5)));
+    this.notificationNew.map(x => x.date = this.notificationService.getDate(x.date));
     this.notificationOld = this.notificationService.getNotification().filter(x => x.date < (Date.now() - (1000*60*60*24*2.5)));
+    this.notificationOld.map(x => x.date = this.notificationService.getDate(x.date));
   }
 }
