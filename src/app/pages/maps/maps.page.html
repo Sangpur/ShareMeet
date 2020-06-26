@@ -14,5 +14,11 @@
           <b class="schwarz">{{poper.title}}</b><div class="schwarz">{{poper.street}}</div><div class="schwarz">{{poper.postcode}}</div>
         </mgl-popup>
     </mgl-map>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="presentModal()">
+          <ion-icon name="list"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
 </ion-content>
 

@@ -1,4 +1,3 @@
-import { Component, OnInit } from '@angular/core';
 import { ModalController, IonRouterOutlet } from '@ionic/angular';
 import { FilterModalPage } from './filter-modal/filter-modal.page';
 import {Component, OnInit, ViewChild} from '@angular/core';
