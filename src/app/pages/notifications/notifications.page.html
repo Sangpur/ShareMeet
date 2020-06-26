@@ -5,5 +5,18 @@
 </ion-header>
 
 <ion-content>
-
+  <p class="headlines">Neu</p>
+  <ion-card *ngFor="let n of notificationNew">
+    <ion-card-content>
+        <p>{{n.message}}</p>
+        <p class="date">{{n.date}}</p>
+    </ion-card-content>
+  </ion-card>
+  <p class="headlines">Alt</p>
+  <ion-card *ngFor="let n of notificationOld">
+    <ion-card-content>
+        <p>{{n.message}}</p>
+        <p class="date">{{n.date}}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
