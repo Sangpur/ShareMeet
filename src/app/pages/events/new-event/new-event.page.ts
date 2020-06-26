@@ -32,7 +32,7 @@ export class NewEventPage implements OnInit {
   constructor(private eventService : EventService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    event = JSON.parse(JSON.stringify(this.emptyEvent));
+    this.event = JSON.parse(JSON.stringify(this.emptyEvent));
   }
 
   saveEvent(){
