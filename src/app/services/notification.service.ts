@@ -7,24 +7,20 @@ import { hasLifecycleHook } from '@angular/compiler/src/lifecycle_reflector';
 export class NotificationService {
   notification = [
     {
-      message: "Hallo1",
+      message: "Tim hat dir eine Anfrage geschickt",
       date: Date.now(),
     },
     {
-      message: "Hallo2",
-      date: Date.now() - (1000*60*60*24*2),
+      message: "Neues Ereignis in der Kategorie Hobbys",
+      date: Date.now() - this.getDateInMilliseconds(2),
     },
     {
-      message: "Hallo3",
-      date: Date.now() - (1000*60*60*24*10),
+      message: "Ihre Anfrage wurde abgelehnt",
+      date: Date.now() - this.getDateInMilliseconds(10),
     },
     {
-      message: "Hallo4",
-      date: Date.now() - (1000*60*60*24*5),
-    },
-    {
-      message: "Hallo5",
-      date: Date.now() - (1000*60*60*24*3),
+      message: "Sie nehmen am Ereigniss Tag der offenen Tür der Feuerwehr teil",
+      date: Date.now() - this.getDateInMilliseconds(5),
     }
   ];
   constructor() { }
@@ -36,6 +32,10 @@ export class NotificationService {
   getDate(x){
     let date = new Date(x);
     return date.getDay() + "." + date.getMonth() + "." + date.getFullYear();
+  }
+
+  getDateInMilliseconds(day : number){
+    return (1000*60*60*24*day)
   }
 }
 
