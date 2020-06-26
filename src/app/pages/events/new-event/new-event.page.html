@@ -1,9 +1,61 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>newEvent</ion-title>
+    <ion-title><ion-icon name="arrow-back"[routerLink]="['/tabs/my-event']"></ion-icon> Neues Ereignis erstellen</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <p class="header">Name des Ereignis</p>
+  <ion-item class="roundedInput">
+    <ion-input placeholder="Name" [(ngModel)]="event.title"></ion-input>
+  </ion-item>
+ 
 
+  <p class="header">Datum</p>
+  <ion-item class="roundedInput">
+    <ion-input placeholder="TT.MM.JJJJ" [(ngModel)]="event.date"></ion-input>
+  </ion-item>
+
+  <p class="header">Uhrzeit</p>
+  <div class="container">
+    <ion-item class="smallInput">
+      <ion-input placeholder="HH:MM" [(ngModel)]="event.starttime"></ion-input>
+    </ion-item>
+    <p class="line">-</p>
+    <ion-item class="smallInput">
+      <ion-input placeholder="HH:MM" [(ngModel)]="event.endtime"></ion-input>
+    </ion-item>
+  </div>
+
+  <div class="container">
+    <ion-checkbox></ion-checkbox>
+    <ion-label>   Zeitraum angeben</ion-label>
+  </div>
+
+  <p class="header2">Adresse</p>
+  <ion-item class="roundedInput">
+    <ion-input [(ngModel)]="event.adresseLine1"></ion-input>
+  </ion-item>
+  <ion-item class="roundedInput">
+    <ion-input [(ngModel)]="event.adresseLine2"></ion-input>
+  </ion-item>
+  <ion-item class="roundedInput">
+    <ion-input [(ngModel)]="event.adresseLine3"></ion-input>
+  </ion-item>
+
+  <p class="header">Beschreibung</p>
+  <ion-item class="roundedInput">
+    <ion-textarea [(ngModel)]="event.description"></ion-textarea>
+  </ion-item>
+
+  <p class="header">Tags</p>
+  <ion-card class=tagsBox>
+    <ion-card-content>
+      <ion-chip *ngFor="let n of event.tags">
+        <ion-label>{{n.name}}</ion-label>
+      </ion-chip>
+    </ion-card-content>
+  </ion-card>
+  <ion-button class="tagButton">Tag auswählen</ion-button>
+  <ion-button expand="full" class="saveButton" (click)="saveEvent()">Speichern</ion-button>
 </ion-content>

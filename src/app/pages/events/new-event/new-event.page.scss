@@ -1,0 +1,54 @@
+.roundedInput {
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-left: 5%; 
+    margin-right: 5%;
+   }
+.header{
+    margin-left: 5%;  
+}
+
+.header2{
+    max-width: fit-content;
+    padding-top: 7em;
+    margin-left: 5%;  
+}
+.smallInput{
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    height: auto;
+    width: 24%;
+    float: left;
+}
+.line{
+    margin-left: 2%; 
+    margin-right: 2%;
+    float: left;
+}
+.container{
+    margin-left: 5%; 
+    margin-right: 5%;
+    float: left;
+}
+.tagsBox{
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-left: 5%; 
+    margin-right: 5%;
+}
+.tagButton{
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    --background: #1f1f1f;
+}
+.saveButton{
+    margin-top: 5em;
+    --background: #1f1f1f;
+}

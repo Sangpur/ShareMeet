@@ -1,9 +1,117 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>myEvent</ion-title>
+    <ion-title>Meine Ereignisse</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="menu">
+    <button class="menu" (click)="switchParticipationStatus()">Teilnahmen</button>
+    <button class="menu" (click)="switchPendingStatus()">Ausstehend</button>
+    <button class="menu" (click)="switchEventStatus()">Eigene Ereignisse</button>
+  </div>
 
+  <div *ngIf="participationStatus">
+    <p class="header">Zugesagt</p>
+    <ion-card *ngFor="let n of promisedEvents">
+      <ion-card-header>
+        <ion-card-title>{{n.title}} <ion-icon name="share-social"></ion-icon></ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{n.description}}
+        <br>
+        <ion-chip *ngFor="let x of n.tags">
+          <ion-label>{{x.name}}</ion-label>
+        </ion-chip>
+      </ion-card-content>
+    </ion-card>
+    <p class="header">Abgesagt</p>
+    <ion-card *ngFor="let n of calledOffEvents">
+      <ion-card-header>
+        <ion-card-title>{{n.title}} <ion-icon name="share-social"></ion-icon></ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{n.description}}
+        <br>
+        <ion-chip *ngFor="let x of n.tags">
+          <ion-label>{{x.name}}</ion-label>
+        </ion-chip>     
+      </ion-card-content>
+    </ion-card>
+  <p class="header">Beendet</p>
+  <ion-card *ngFor="let n of finishedEvents">
+    <ion-card-header>
+      <ion-card-title>{{n.title}} <ion-icon name="share-social"></ion-icon></ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{n.description}}
+      <br>
+      <ion-chip *ngFor="let x of n.tags">
+        <ion-label>{{x.name}}</ion-label>
+      </ion-chip>     
+    </ion-card-content>
+  </ion-card>
+  </div>
+
+  <div *ngIf="pendingStatus">
+    <ion-card *ngFor="let n of pending">
+      <ion-card-header>
+        <ion-card-title>{{n.title}} <ion-icon name="share-social"></ion-icon></ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{n.description}}
+        <br>
+        <ion-chip *ngFor="let x of n.tags">
+          <ion-label>{{x.name}}</ion-label>
+        </ion-chip>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div *ngIf="eventStatus">
+    <p class="header">Aktuell</p>
+    <ion-card *ngFor="let n of ownEvents">
+      <ion-card-header>
+        <ion-card-title>{{n.title}} <ion-icon name="share-social"></ion-icon></ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{n.description}}
+        <br>
+        <ion-chip *ngFor="let x of n.tags">
+          <ion-label>{{x.name}}</ion-label>
+        </ion-chip>
+        <hr>
+        <p>Teilnehmer: {{n.memberCount}} / {{n.memberMaxCount}}</p>
+        <p>Unbeantwortete Anfragen: {{n.unansweredCount}}</p>
+      </ion-card-content>
+    </ion-card>
+
+    <p class="header">Beendet</p>
+    <ion-card *ngFor="let n of finishedownEvents">
+      <ion-card-header>
+        <ion-card-title>{{n.title}} <ion-icon name="share-social"></ion-icon></ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{n.description}}
+        <br>
+        <ion-chip *ngFor="let x of n.tags">
+          <ion-label>{{x.name}}</ion-label>
+        </ion-chip>
+        <hr>
+        <p>Teilnehmer: {{n.memberCount}} / {{n.memberMaxCount}}</p>
+        <p>Unbeantwortete Anfragen: {{n.unansweredCount}}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['/tabs/new-event']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
