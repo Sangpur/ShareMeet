@@ -7,53 +7,29 @@ export class NewsService {
 
   news = [
     {
-      title: "Lala1",
-      message: "The best of lala",
+      title: "Kreunzungsstau schon wieder",
+      message: "Warum ist schon wieder Stau an der Kreuzung an der Musterstraße",
       author: {
         name: "Hansy",
         id: 6969
       }
     },
     {
-      title: "Lala2",
-      message: "The best of lala",
+      title: "Schlagloch auf der Musterstraße",
+      message: "Auf der Musterstraße höhe Karstadt ist ein großes Schlagloch",
       author: {
-        name: "Hansy",
-        id: 6969
+        name: "Hans",
+        id: 7000
       }
     },
     {
-      title: "Lala3",
-      message: "The best of lala",
+      title: "Schloßpark",
+      message: "Ich habe gesehen das der Schloßpark jetzt wieder richtig schön ist. Danke Stadt Osnabrück",
       author: {
-        name: "Hansy",
-        id: 6969
+        name: "Lena",
+        id: 7001
       }
-    },
-    {
-      title: "Lala4",
-      message: "The best of lala",
-      author: {
-        name: "Hansy",
-        id: 6969
-      }
-    },
-    {
-      title: "Lala5",
-      message: "The best of lala",
-      author: {
-        name: "Elon",
-        id: 42
-      }
-    },
-    {
-      title: "Lala6",
-      message: "The best of lala",
-      author: {
-        name: "Hansy",
-        id: 6969
-      }
-    },
+    }
   ];
 
   constructor() { }
